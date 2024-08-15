@@ -13,8 +13,15 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-
+  myvariable: 'Value'
 steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "${myvariable}"
 - task: NuGetToolInstaller@1
 
 - task: NuGetCommand@2
